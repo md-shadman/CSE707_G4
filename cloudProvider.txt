@@ -1,7 +1,6 @@
 Provider: Microsoft Azure
 Using Linux Virtual Machine using a free account
 username: rootuser
-password: Password1@@@
 IP: 23.96.1.110
 ssh rootuser@23.96.1.110
 
