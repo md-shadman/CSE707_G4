@@ -1,3 +1,8 @@
-Ans 1: Massege Passing Interface (MPI)
+Ans 1: Message Passing Interface (MPI)
 Ans 2: 
-Ans 3:
+USE mpi or INCLUDE 'mpif.h': 
+MPI_Init - Takes the command line arguments to a program, checks for any MPI options, and passes remaining command line arguments to the main program
+MPI_Comm_size -Determines the size of a given MPI Communicator
+MPI_Comm_rank - Returns the rank of the calling MPI process within the specified communicator.
+MPI_Finalize - Terminates the MPI execution environment
+Ans 3: 3.0
