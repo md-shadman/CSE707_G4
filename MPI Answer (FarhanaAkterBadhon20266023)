@@ -1,0 +1,14 @@
+1 ans: Message Passing Interface
+
+2 ans: 
+MPI_Init(int *argc, char ***argv)
+Takes the command line arguments to a program, checks for any MPI options, and passes remaining command line arguments to the main program.
+
+MPI_Comm_size( MPI_Comm comm, int *size )
+Determines the size of a given MPI Communicator. A communicator is a set of processes that work together. For typical programs this is the default MPI_COMM_WORLD, which is the communicator for all processes available to an MPI program.
+
+MPI_Comm_rank( MPI_Comm comm, int *rank )
+Determine the rank of the current process within a communicator. Typically, if a MPI program is being run on N processes, the communicator would be MPI_COMM_WORLD, and the rank would be an integer from 0 to N-1.
+
+3 ans:
+The current version of the MPI standard is 3.0
