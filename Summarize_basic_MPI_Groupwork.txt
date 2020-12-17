@@ -1,0 +1,16 @@
+There are two different views of an MPI Program.
+The first view is a lightweight protocol that requires only 6 commands whereas the second view is an in depth protocol with hundreds of specialized commands. 
+
+Firstly, we need to set up an MPI program, get the number of processes participating in the program, determine which of those processes corresponds to the one calling the command, send messages, receive messages, and stop participating in a parallel program.
+The commands for the view with the 6 commands are as follows:
+
+MPI_Init : Takes the command line arguments to a program, checks for any MPI options, and passes remaining command line arguments to the main program.
+MPI_Comm_size: Determines the size of a given MPI Communicator. For typical programs this is the default MPI_COMM_WORLD, which is the communicator for all processes available to an MPI program.
+MPI_Comm_rank: Determine the rank of the current process within a communicator. Typically, if a MPI program is being run on N processes, the communicator would be MPI_COMM_WORLD, and the rank would be an integer from 0 to N-1.
+MPI_Send: Send the contents of buf, which contains count elements of type datatype to a process of rank dest in the communicator comm, flagged with the message tag
+MPI_Recv: Read into buf count values of type datatype from process source in communicator comm if a message is sent flagged with tag. Also receive information about the transfer into status.
+MPI_Finalize():Handles anything that the current MPI protocol will need to do before exiting a program.
+
+In order to prevent deadlocks ( program gets hang for waiting for the send or receive), we need to implement “blocking” sends and receives, where the program will not let the system proceed with the sends and receives unless the message has been actually sent or received.  
+
+An example code on how to parallelize an existing model by changing the code in order to parallelize it and methods to improve the efficiency of the code. 
